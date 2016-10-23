@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GaussJS</title>
+	<script type="text/javascript" src="d3.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400" rel="stylesheet">
+	<base href="/analyze">
+</head>
+<body>
+	<header>
+		<h1>NormalDist.JS</h1>
+		<h3>sample of numbers by Gauss</h3>
+		<h2>MODE:</h2>
+		<a ui-sref="analyze">Analysis</a>
+		<a ui-sref="generate">Generation</a>
+	</header>
+
+	<section>
+		<div ui-view></div>
+	</section>
+	<script src="index.js"></script>
+</body>
+</html>

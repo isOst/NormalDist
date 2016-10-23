@@ -1,0 +1,33 @@
+<div>
+	<div class="input">
+		<h1>INPUT</h1>
+			<h2>Amount of sample items</h2>
+			<input type="number" id="amount" ng-model="generate.amount">
+			<p>It sould be integer</p>
+			<h2>Mean</h2>
+			<input type="number" id="mean" ng-model="generate.mean">
+			<p>A number around which the sample would be generated</p>
+			<h2>Coefficient of variation</h2>
+			<input type="number" id="coefOfVar" ng-model="generate.coefOfVar">
+			<p>Input a number from 0 - 0.4</p>
+			<h2>Decimal tolerance</h2>
+			<input type="number" id="tolerance" ng-model="generate.tolerance">
+			<p>Number of digits after dot in decimal. Ex.: 123<b>.45</b> => 2</p>
+			<button ng-click="generate.getter()" class="generate">Generate</button>		
+	</div>
+	<div class="chart">
+		<h1>/Bar Chart here/</h1>
+	</div>
+	<div class="statistics">
+		<h1>Main statistics of the sample</h1>
+		<h2>Mean: {{generate.meanG}}</h2>
+		<h2>Variance: {{generate.varianceG}}</h2>
+		<h2>Standart deviation: {{generate.standartDeviationG}}</h2>
+	</div>
+	<div class="sample">
+		<h1>SAMPLE</h1>
+		<div class="list">
+			<div ng-repeat="item in generate.sample track by $index">{{item}}</div>
+		</div>
+	</div>
+</div>

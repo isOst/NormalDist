@@ -1,0 +1,34 @@
+<div>
+	<div class="entry">
+		<h1>DATA ENTRY</h1>
+		<p>Enter sample of numbers to analyze</p>
+		<h2>Decimal tolerance </h2>
+		<input ng-model="analyze.tolerance" class="decimal">
+		<p>Number of digits after dot in decimal. Ex.: 123<b>.45</b> => 2</p>
+		<h2>Enter a number</h2>
+		<input ng-model="analyze.addNumber" ng-keyup="analyze.addItemKey($event)" class="number">
+		<button ng-click="analyze.addItem()" class="add">Add</button>
+		<ul>
+			<li>only numbers are allowed</li>
+			<li>add item by press "Enter", "Spacebar" or "Tab" button</li>
+		</ul>		
+		<button ng-click="analyze.getter()" class="analyze">Analyze</button>
+	</div>
+	<div class="chart">
+		<h1>/Bar Chart here/</h1>
+	</div>
+	<div class="statistics">
+		<h1>Main statistics of the sample</h1>
+		<h2>Pearson test χ-squared: {{analyze.pirsen}}</h2>
+		<p>conclusion: {{analyze.pirsenMsg}}</p>
+		<h2>Mean: {{analyze.mean}}</h2>
+		<h2>Variance: {{analyze.variance}}</h2>
+		<h2>Standart deviation: {{analyze.standartDeviation}}</h2>
+	</div>
+	<div class="sample">
+		<h1>Sample</h1>
+		<div class="list">
+			<div ng-repeat="item in analyze.sample track by $index" ng-click="analyze.removeItem($index)">{{item}}</div>
+		</div>
+	</div>
+</div>
